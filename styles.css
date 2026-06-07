@@ -14,6 +14,10 @@
   --night: #282019;
   --soft-blue: #b8d9e8;
   --shadow: 0 24px 90px rgba(35, 28, 20, 0.12);
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: clamp(16px, 2vw, 24px);
+  --radius-xl: clamp(26px, 4vw, 44px);
   --serif: "Cormorant Garamond", Georgia, serif;
   --sans: "Inter", Arial, sans-serif;
 }
@@ -137,6 +141,7 @@ button:focus-visible {
 
 .nav-cta {
   border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
   padding: 10px 16px;
   color: var(--gold-light);
 }
@@ -157,7 +162,7 @@ button:focus-visible {
   inset: 118px clamp(12px, 1.4vw, 22px) 22px;
   z-index: 0;
   overflow: hidden;
-  border-radius: clamp(26px, 4vw, 44px);
+  border-radius: var(--radius-xl);
   box-shadow: var(--shadow);
 }
 
@@ -283,8 +288,10 @@ button:focus-visible {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1px;
+  overflow: hidden;
   background: rgba(255, 253, 248, 0.18);
   border: 1px solid rgba(255, 253, 248, 0.18);
+  border-radius: var(--radius-md);
   box-shadow: none;
 }
 
@@ -322,6 +329,7 @@ button:focus-visible {
   min-height: 54px;
   padding: 0 24px;
   border: 1px solid transparent;
+  border-radius: var(--radius-sm);
   color: var(--paper);
   background: var(--night);
   font-size: 12px;
@@ -540,7 +548,7 @@ button:focus-visible {
   transform-origin: center bottom;
   will-change: transform;
   border: 1px solid rgba(25, 24, 22, 0.1);
-  border-radius: clamp(16px, 2vw, 24px);
+  border-radius: var(--radius-lg);
   box-shadow: 0 16px 44px rgba(35, 28, 20, 0.06);
 }
 
@@ -693,7 +701,7 @@ button:focus-visible {
   transform-origin: center center;
   will-change: transform;
   border: 1px solid rgba(25, 24, 22, 0.1);
-  border-radius: clamp(16px, 2vw, 24px);
+  border-radius: var(--radius-lg);
   box-shadow: 0 16px 44px rgba(35, 28, 20, 0.06);
 }
 
@@ -758,6 +766,7 @@ button:focus-visible {
   margin-top: 24px;
   padding: 8px 12px;
   border: 1px solid rgba(183, 131, 37, 0.4);
+  border-radius: var(--radius-sm);
   color: var(--gold-light);
   font-size: 10px;
   font-weight: 800;
@@ -792,7 +801,9 @@ button:focus-visible {
   gap: 0;
   margin: 0 0 32px;
   padding: 0;
+  overflow: hidden;
   border: 1px solid rgba(25, 24, 22, 0.1);
+  border-radius: var(--radius-md);
   background: var(--paper);
   list-style: none;
 }
@@ -859,6 +870,7 @@ button:focus-visible {
   display: grid;
   place-items: center;
   border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
   color: var(--gold-light);
   transition: transform 180ms ease;
 }
@@ -892,7 +904,7 @@ button:focus-visible {
   padding: clamp(28px, 5vw, 56px);
   background: var(--paper);
   border: 1px solid rgba(25, 24, 22, 0.1);
-  border-radius: clamp(16px, 2vw, 24px);
+  border-radius: var(--radius-lg);
 }
 
 .local-info {
@@ -981,7 +993,7 @@ button:focus-visible {
   background-position: center 42%;
   color: var(--paper);
   margin: clamp(12px, 1.4vw, 22px);
-  border-radius: clamp(26px, 4vw, 44px);
+  border-radius: var(--radius-xl);
 }
 
 .final::before {
@@ -1071,6 +1083,7 @@ button:focus-visible {
 .sticky-cta .btn {
   min-height: 48px;
   min-width: 220px;
+  border-radius: var(--radius-md);
   color: var(--cream);
   background: #f2cf75;
   box-shadow: 0 16px 44px rgba(0, 0, 0, 0.3);
@@ -1217,6 +1230,14 @@ button:focus-visible {
   .experience-card p {
     font-size: 16px;
     line-height: 1.65;
+  }
+
+  .local-info {
+    min-height: auto;
+  }
+
+  .local-map {
+    min-height: 260px;
   }
 
   .photo-slot:first-child {
